@@ -27,9 +27,11 @@ export default class SuperList {
 	 */
 	constructor( debug = false ){
 		this.debug = debug;
-		this.Input = this.$( '#sl-text-input' );
-		this.Button = this.$( '#sl-add-button' );
-		this.List = this.$( '#sl-list' );
+		this.html = {
+			input : this.$( '#sl-text-input' ),
+			button : this.$( '#sl-add-button' ),
+			list : this.$( '#sl-list' )
+		};
 	}
 	$( element ){
 		return document.querySelector( element );
@@ -41,9 +43,9 @@ export default class SuperList {
 		/**
 		 * 
 		 */
-		this.Input.addEventListener( 'keydown', function( event ){
+		this.html.input.addEventListener( 'keydown', function( event ){
 			if( event.key === 'Enter' ){
-				if( this.Input.value != '' ){
+				if( this.html.input.value != '' ){
 					this.addTask();
 				}
 				else {
@@ -54,8 +56,8 @@ export default class SuperList {
 		/**
 		 * 
 		 */
-		this.Button.addEventListener( 'click', function( event ){
-			if( this.Input.value != '' ){
+		this.html.button.addEventListener( 'click', function( event ){
+			if( this.html.input.value != '' ){
 				this.addTask();
 			}
 			else {
@@ -65,7 +67,7 @@ export default class SuperList {
 		/**
 		 * 
 		 */
-		this.List.addEventListener( 'click', function( event ){
+		this.html.list.addEventListener( 'click', function( event ){
 			if( event.target.tagName === 'LI' ){
 				event.target.classList.toggle( 'checked' );
 			}
@@ -78,30 +80,59 @@ export default class SuperList {
 		 * 
 		 */
 		this.load();
+		this.greet();
 	}
 	/**
 	 * 
 	 */
 	addTask(){
 		let li = document.createElement( 'li' );
-		li.innerHTML = this.Input.value;
-		this.List.appendChild( li );
+		li.innerHTML = this.html.input.value;
+		this.html.list.appendChild( li );
 		let span = document.createElement( 'span' );
 		span.innerHTML = '\u00d7';
 		li.appendChild( span );
-		this.Input.value = '';
+		this.html.input.value = '';
 		this.save();
 	}
 	/**
 	 * 
 	 */
 	save(){
-		localStorage.setItem( 'data', this.List.innerHTML );
+		localStorage.setItem( 'data', this.html.list.innerHTML );
 	}
 	/**
 	 * 
 	 */
 	load(){
-		this.List.innerHTML = localStorage.getItem( 'data' );
+		this.html.list.innerHTML = localStorage.getItem( 'data' );
 	}
+	greet(){
+		let weekday;
+		switch( new Date().getDay() ){
+			case 0:
+				weekday = 'Sunday';
+				break;
+			case 1:
+				weekday = 'Monday';
+				break;
+			case 2:
+				weekday = 'Tuesday';
+				break;
+			case 3:
+				weekday = 'Wednesday';
+				break;
+			case 4:
+				weekday = 'Thursday';
+				break;
+			case 5:
+				weekday = 'Friday';
+				break;
+			case 6:
+				weekday = 'Saturday';
+				break;
+		}
+		this.$( '#sl-greeting' ).innerHTML = `Hey, happy ${weekday}!`;
+	}
+
 }
