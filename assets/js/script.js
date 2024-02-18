@@ -28,5 +28,5 @@ import SuperList from './superlist.js';
 window.addEventListener( 'load', function(){
 	const loading = document.getElementById( 'loading' );
 	loading.style.display = 'none';
-	new SuperList().run();
+	new SuperList( true ).run();
 });

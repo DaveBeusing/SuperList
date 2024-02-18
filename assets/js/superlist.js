@@ -25,10 +25,14 @@ export default class SuperList {
 	/**
 	 * 
 	 */
-	constructor(){
-		this.Input = document.getElementById( 'sl-text-input' );
-		this.Button = document.getElementById( 'sl-add-button' );
-		this.List = document.getElementById( 'sl-list' );
+	constructor( debug = false ){
+		this.debug = debug;
+		this.Input = this.$( '#sl-text-input' );
+		this.Button = this.$( '#sl-add-button' );
+		this.List = this.$( '#sl-list' );
+	}
+	$( element ){
+		return document.querySelector( element );
 	}
 	/**
 	 * 
