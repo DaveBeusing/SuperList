@@ -82,35 +82,126 @@ button#sl-add-button {
 	cursor: pointer;
 	border-radius: 40px;
 }
-
-#sl-list li {
+/*
+#sl-tasks li {
+	display: block;
 	list-style: none;
 	font-size: 17px;
 	padding: 12px 8px 12px 50px;
 	user-select: none;
 	cursor: pointer;
 	position: relative;
+
+	border:1px solid red;
 }
 
-#sl-list li:before {
+#sl-tasks li:before {
 	content: '⚪️';
 	position: absolute;
 	top: 10px;
 	left: 8px;
 }
 
-#sl-list li.checked {
+#sl-tasks li.checked {
 	color: #555;
 	text-decoration: line-through;
 }
 
-#sl-list li.checked:after {
+#sl-tasks li.checked:after {
+	content: '✔️';
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+*/
+
+#sl-tasks {
+
+	
+}
+
+.sl-task {
+	display: block;
+	position: relative;
+	font-size: 17px;
+	background: #edeef0;
+	border-radius: 30px;
+	padding: 12px 8px 12px 50px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.sl-task:before {
+	content: '⚪️';
+	position: absolute;
+	top: 10px;
+	left: 8px;
+}
+
+.sl-task .checked {
+	color: #555;
+	text-decoration: line-through;
+}
+
+.sl-task .checked:after {
 	content: '✔️';
 	position: absolute;
 	top: 10px;
 	left: 8px;
 }
 
+
+.sl-task-content {
+	display:block;
+	width: 100%;;
+}
+
+.sl-task-title,
+.sl-task-duration {
+	display: inline-block;
+}
+
+.sl-task-title {
+	width: 80%;
+}
+
+.sl-task-content:hover + .sl-task-controls {
+	display: block;
+}
+.sl-task-controls:hover {
+	display: block;
+}
+
+.sl-task-controls {
+	position: absolute;
+	top: 4px;
+	right: 24px;
+	padding: 0 10px;
+	background: #edeef0;
+	border-radius: 20%;
+	display: none;
+}
+
+.sl-task-controls span {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 22px;
+	color: #7F27FF;
+	text-align: center;
+	border-radius: 50%;
+	margin: 0 10px;
+}
+
+.sl-task-controls span:hover {
+	background: #fff;
+	cursor: pointer;
+}
+
+
+
+/*
 #sl-list li span {
 	position: absolute;
 	right: 0;
@@ -123,7 +214,7 @@ button#sl-add-button {
 	text-align: center;
 	border-radius: 50%;
 }
-
 #sl-list li span:hover {
 	background: #edeef0;
 }
+*/
