@@ -71,7 +71,7 @@ export default class SuperList {
 	}
 	addTask( task ){
 		const item = document.createElement( 'div' );
-			item.className = 'sl-task';
+			item.className = ( task.done ) ? 'sl-task checked' : 'sl-task';
 			item.id = `task-${task.id}`;
 		const content = document.createElement( 'div' );
 			content.className = 'sl-task-content';
@@ -104,9 +104,11 @@ export default class SuperList {
 			const target = event.target;
 			const tag = String( target.tagName ).toLowerCase();
 			const name = target.className;
-			console.log( 'item::event::click', tag, name );
+			console.log( 'item::event::click', tag, name, task.id );
 			if( tag === 'div' && name.includes( 'sl-task' ) ){
+				task.done = ( task.done ) ? false : true;
 				target.classList.toggle( 'checked' );
+				this.save();
 			}
 			if( tag === 'span' && name.includes( 'sl-task-control-timer' ) ){
 				if( task.interval === null ){

@@ -28,6 +28,7 @@ export class Task {
 		this.title = title;
 		this.seconds = seconds;
 		this.interval = null;
+		this.done = false;
 	}
 }
 

@@ -82,42 +82,8 @@ button#sl-add-button {
 	cursor: pointer;
 	border-radius: 40px;
 }
-/*
-#sl-tasks li {
-	display: block;
-	list-style: none;
-	font-size: 17px;
-	padding: 12px 8px 12px 50px;
-	user-select: none;
-	cursor: pointer;
-	position: relative;
-
-	border:1px solid red;
-}
-
-#sl-tasks li:before {
-	content: '⚪️';
-	position: absolute;
-	top: 10px;
-	left: 8px;
-}
-
-#sl-tasks li.checked {
-	color: #555;
-	text-decoration: line-through;
-}
-
-#sl-tasks li.checked:after {
-	content: '✔️';
-	position: absolute;
-	top: 10px;
-	left: 8px;
-}
-*/
 
 #sl-tasks {
-
-	
 }
 
 .sl-task {
@@ -143,13 +109,17 @@ button#sl-add-button {
 	text-decoration: line-through;
 }
 
-.sl-task .checked:after {
+.checked:after {
 	content: '✔️';
 	position: absolute;
 	top: 10px;
 	left: 8px;
 }
 
+.checked .sl-task-title {
+	color: #555;
+	text-decoration: line-through;
+}
 
 .sl-task-content {
 	display:block;
@@ -198,23 +168,3 @@ button#sl-add-button {
 	background: #fff;
 	cursor: pointer;
 }
-
-
-
-/*
-#sl-list li span {
-	position: absolute;
-	right: 0;
-	top: 5px;
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
-	font-size: 22px;
-	color: #7F27FF;
-	text-align: center;
-	border-radius: 50%;
-}
-#sl-list li span:hover {
-	background: #edeef0;
-}
-*/
