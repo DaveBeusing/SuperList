@@ -1,5 +1,5 @@
 # SuperList 🌠
-SuperList - a very simple To-Do list
+SuperList - a very simple To-Do list and time tracking WebApp
 
 ### 🔸 Screenshots
 ![SuperList](https://raw.githubusercontent.com/DaveBeusing/SuperList/master/assets/img/superlist.png)
