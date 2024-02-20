@@ -22,7 +22,7 @@
  *
  */
 
-export default class Task {
+export class Task {
 
 	constructor( id = 0, title = '', duration = '00:00:00' ){
 		this.id = id;
@@ -30,6 +30,14 @@ export default class Task {
 		this.duration = duration;
 		this.seconds = 0;
 		this.interval = null;
+	}
+
+}
+
+export class Timer {
+
+	constructor(){
+
 	}
 
 }

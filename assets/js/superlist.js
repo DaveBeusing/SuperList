@@ -21,7 +21,7 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-import Task from './task.js';
+import {Task} from './utils.js';
 
 export default class SuperList {
 
