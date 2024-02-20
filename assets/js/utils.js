@@ -23,25 +23,40 @@
  */
 
 export class Task {
-
-	constructor( id = 0, title = '', duration = '00:00:00' ){
+	constructor( id = 0, title = '', seconds = 0 ){
 		this.id = id;
 		this.title = title;
-		this.duration = duration;
-		this.seconds = 0;
+		this.seconds = seconds;
 		this.interval = null;
 	}
-
 }
 
-export class Timer {
-
-	constructor( task ){
-		this.task = task;
+export class Greeter {
+	constructor(){
+		let weekday;
+		switch( new Date().getDay() ){
+			case 0:
+				weekday = 'Sunday';
+				break;
+			case 1:
+				weekday = 'Monday';
+				break;
+			case 2:
+				weekday = 'Tuesday';
+				break;
+			case 3:
+				weekday = 'Wednesday';
+				break;
+			case 4:
+				weekday = 'Thursday';
+				break;
+			case 5:
+				weekday = 'Friday';
+				break;
+			case 6:
+				weekday = 'Saturday';
+				break;
+		}
+		this.$( '#sl-greeting' ).innerHTML = `Hey, happy ${weekday}!`;
 	}
-
-	run(){
-		
-	}
-
 }
