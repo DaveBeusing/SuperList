@@ -26,7 +26,14 @@ import SuperList from './superlist.js';
  * 
  */
 window.addEventListener( 'load', function(){
+	const debug = true;
 	const loading = document.getElementById( 'loading' );
 	loading.style.display = 'none';
-	new SuperList( true ).run();
+	if( debug ){
+		window.SuperList = new SuperList( debug );
+		window.SuperList.run();
+	}
+	else {
+		new SuperList().run();
+	}
 });

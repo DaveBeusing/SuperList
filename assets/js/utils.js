@@ -36,8 +36,12 @@ export class Task {
 
 export class Timer {
 
-	constructor(){
+	constructor( task ){
+		this.task = task;
+	}
 
+	run(){
+		
 	}
 
 }

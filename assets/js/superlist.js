@@ -21,20 +21,19 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-import {Task} from './utils.js';
+import { Task, Timer } from './utils.js';
 
 export default class SuperList {
 
 	constructor( debug = false ){
 		this.debug = debug;
 		this.tasks = [];
-
 		this.html = {
 			input : this.$( '#sl-text-input' ),
 			button : this.$( '#sl-add-button' ),
 			list : this.$( '#sl-tasks' )
 		};
-
+		if( this.debug ) console.log( 'SuperList::debug::true' );
 	}
 	$( element ){
 		return document.querySelector( element );
